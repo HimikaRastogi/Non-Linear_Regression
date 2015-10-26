@@ -25,6 +25,8 @@ abline(h=0, lty=2)
 # Using analytical derivatives:
 model <- function(beta1, beta2, beta3, time) {
   m <- beta1/(1+exp(beta2+beta3*time))
+  
+  
   term <- exp(beta2 + beta3*time)
   gradient <- cbind((1+term)^-1,
                     -beta1*(1+term)^-2 * term,
